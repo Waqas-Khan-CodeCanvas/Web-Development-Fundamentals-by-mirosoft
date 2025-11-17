@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskMaster - Simple Todo List</title>
+    <!-- Google Fonts - Using a nice pair of fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <header class="app-header">
+            <h1 class="app-title">TaskMaster</h1>
+            <p class="app-subtitle">Organize your day, achieve your goals</p>
+        </header>
+        
+        <main class="main-card">
+            <section class="task-form-container">
+                <form id="task-form">
+                    <div class="form-group">
+                        <label for="task-input">Task Description</label>
+                        <input 
+                            type="text" 
+                            id="task-input" 
+                            placeholder="What needs to be done?" 
+                            required
+                        >
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="task-priority">Priority</label>
+                        <select id="task-priority">
+                            <option value="low">Low</option>
+                            <option value="medium" selected>Medium</option>
+                            <option value="high">High</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="task-date">Due Date</label>
+                        <input type="date" id="task-date" required>
+                    </div>
+                    
+                    <span class="error" id="form-error"></span>
+                    
+                    <div class="form-actions">
+                        <button type="submit">Add Task</button>
+                    </div>
+                </form>
+            </section>
+            
+            <section class="tasks-container">
+                <div class="section-header">
+                    <h2 class="section-title">My Tasks</h2>
+                    <nav>
+                        <button class="filter-btn active" data-filter="all">all</button>
+                        <button class="filter-btn" data-filter="active">active</button>
+                        <button class="filter-btn" data-filter="completed">completed</button>
+                    </nav>
+                </div>
+                
+                <ul id="task-list">
+                    <!-- Task items will be rendered here dynamically -->
+                </ul>
+                
+                <div class="tasks-summary">
+                    <p><span id="items-left">0</span> items left</p>
+                    <button id="clear-completed-btn">Clear completed</button>
+                </div>
+            </section>
+        </main>
+        
+        <footer class="app-footer">
+            <p>Created with HTML, CSS and JavaScript</p>
+        </footer>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
